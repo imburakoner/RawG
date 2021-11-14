@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeInteractorOutput: AnyObject {
 
+    func didRetrieveNewAndUpdatedGames(_ games: [Game])
 }
 
 protocol HomeInteractorProtocol {
@@ -30,7 +31,7 @@ extension HomeInteractor: HomeInteractorProtocol {
         service.fetchNewAndUpdatedGames { result in
             switch result {
             case .success(let response):
-                break
+                self.output?.didRetrieveNewAndUpdatedGames(response.results ?? [])
             case .failure(let error):
                 break
             }

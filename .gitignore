@@ -2,3 +2,5 @@
 xcuserdata/
 
 /RawG/RawG/Resources/Secrets.plist
+*.resolved
+*.xcworkspacedata

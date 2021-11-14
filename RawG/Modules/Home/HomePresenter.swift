@@ -34,4 +34,9 @@ extension HomePresenter: HomePresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorOutput {
+    func didRetrieveNewAndUpdatedGames(_ games: [Game]) {
+        viewModel = viewModel.update(featuredGames: games.map(FeaturedGameCellModel.init(with:)))
+
+        view?.configure(with: viewModel)
+    }
 }
