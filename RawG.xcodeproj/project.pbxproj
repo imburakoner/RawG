@@ -51,6 +51,8 @@
 		09A6BFB4274173AC009CE6B7 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFB3274173AC009CE6B7 /* HomeDataSource.swift */; };
 		09A6BFB727417B01009CE6B7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09A6BFB627417B01009CE6B7 /* Kingfisher */; };
 		09A6BFBB27417B2E009CE6B7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBA27417B2E009CE6B7 /* UIImageView+Extensions.swift */; };
+		09A6BFBD2741851E009CE6B7 /* TrendingGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */; };
+		09A6BFBF27418537009CE6B7 /* TrendingGameCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		09A6BFB0274170F1009CE6B7 /* FeaturedGameCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedGameCellModel.swift; sourceTree = "<group>"; };
 		09A6BFB3274173AC009CE6B7 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		09A6BFBA27417B2E009CE6B7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGameCell.swift; sourceTree = "<group>"; };
+		09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGameCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +328,8 @@
 		09A6BF7827412FBB009CE6B7 /* TrendingGameCell */ = {
 			isa = PBXGroup;
 			children = (
+				09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */,
+				09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */,
 			);
 			path = TrendingGameCell;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				09A6BFA727416C7B009CE6B7 /* Store.swift in Sources */,
 				09A6BF7027412F91009CE6B7 /* HomeService.swift in Sources */,
 				09A6BFA827416C7B009CE6B7 /* Requirement.swift in Sources */,
+				09A6BFBD2741851E009CE6B7 /* TrendingGameCell.swift in Sources */,
 				09A6BF7227412F99009CE6B7 /* HomeRouter.swift in Sources */,
 				09A6BF09274118CA009CE6B7 /* SceneDelegate.swift in Sources */,
 				09A6BFA427416C7B009CE6B7 /* ParentPlatform.swift in Sources */,
@@ -550,6 +557,7 @@
 				09A6BFA327416C7B009CE6B7 /* ScreenShot.swift in Sources */,
 				09A6BF9E27416C7B009CE6B7 /* ESBRRating.swift in Sources */,
 				09A6BFA027416C7B009CE6B7 /* Rating.swift in Sources */,
+				09A6BFBF27418537009CE6B7 /* TrendingGameCellModel.swift in Sources */,
 				09A6BF7A27412FD3009CE6B7 /* HomeBuilder.swift in Sources */,
 				09A6BF8D27416C45009CE6B7 /* ListGamesResponse.swift in Sources */,
 				09A6BF2627411BD7009CE6B7 /* HomeViewController.swift in Sources */,

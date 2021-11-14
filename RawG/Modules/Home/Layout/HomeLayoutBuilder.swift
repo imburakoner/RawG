@@ -19,7 +19,7 @@ enum HomeLayoutBuilder {
             case .featured:
                 return Self.buildFeaturedCollectionLayoutSection()
             case .trending:
-                return Self.buildFeaturedCollectionLayoutSection()
+                return Self.buildTrendingCollectionLayoutSection()
             }
         }
     }
@@ -30,17 +30,37 @@ enum HomeLayoutBuilder {
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8),
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9),
                                                heightDimension: .fractionalHeight(0.4))
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
 
-        group.contentInsets = .init(top: 12, leading: 12, bottom: 12, trailing: 0)
+        group.contentInsets = .init(top: 10, leading: 12, bottom: 0, trailing: 0)
 
         let section = NSCollectionLayoutSection(group: group)
 
         section.orthogonalScrollingBehavior = .groupPaging
+
+        return section
+    }
+
+    private static func buildTrendingCollectionLayoutSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                                                                             heightDimension: .fractionalHeight(1.0)))
+
+        item.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .estimated(170))
+
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 12, bottom: 0, trailing: 12)
 
         return section
     }

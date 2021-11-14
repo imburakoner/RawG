@@ -30,13 +30,23 @@ final class HomePresenter {
 extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
         interactor.fetchNewAndTrendingGames()
+        interactor.fetchTrendingGames()
     }
 }
 
 extension HomePresenter: HomeInteractorOutput {
-    func didRetrieveNewAndUpdatedGames(_ games: [Game]) {
-        viewModel = viewModel.update(featuredGames: games.map(FeaturedGameCellModel.init(with:)))
 
+    func didRetrieveNewAndUpdatedGames(_ games: [Game]) {
+        viewModel = viewModel.update(with: games.map(FeaturedGameCellModel.init(with: )))
         view?.configure(with: viewModel)
+    }
+
+    func didRetrieveTrendingGames(_ games: [Game]) {
+        viewModel = viewModel.update(with: games.map(TrendingGameCellModel.init(with: )))
+        view?.configure(with: viewModel)
+    }
+
+    func didRetrieveError(_ error: Error) {
+
     }
 }

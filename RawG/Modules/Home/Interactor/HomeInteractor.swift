@@ -10,10 +10,13 @@ import Foundation
 protocol HomeInteractorOutput: AnyObject {
 
     func didRetrieveNewAndUpdatedGames(_ games: [Game])
+    func didRetrieveTrendingGames(_ games: [Game])
+    func didRetrieveError(_ error: Error)
 }
 
 protocol HomeInteractorProtocol {
     func fetchNewAndTrendingGames()
+    func fetchTrendingGames()
 }
 
 final class HomeInteractor {
@@ -27,13 +30,26 @@ final class HomeInteractor {
 }
 
 extension HomeInteractor: HomeInteractorProtocol {
+    func fetchTrendingGames() {
+        service.fetchTrendingGames { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.output?.didRetrieveTrendingGames(response.results ?? [])
+            case .failure(let error):
+                self.output?.didRetrieveError(error)
+            }
+        }
+    }
+
     func fetchNewAndTrendingGames() {
-        service.fetchNewAndUpdatedGames { result in
+        service.fetchNewAndUpdatedGames { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let response):
                 self.output?.didRetrieveNewAndUpdatedGames(response.results ?? [])
             case .failure(let error):
-                break
+                self.output?.didRetrieveError(error)
             }
         }
     }

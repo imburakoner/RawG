@@ -9,28 +9,43 @@ import UIKit
 
 class HomeDataSource {
 
-    private typealias Cell = FeaturedGameCell
-    private typealias CellRegistration = UICollectionView.CellRegistration<Cell, FeaturedGameCellModel>
+    private typealias FeaturedGameCellRegistration = UICollectionView.CellRegistration<FeaturedGameCell,
+                                                                                       FeaturedGameCellModel>
 
-    var dataSource: UICollectionViewDiffableDataSource<HomeSections, FeaturedGameCellModel>
+    private typealias TrendingGameCellRegistration = UICollectionView.CellRegistration<TrendingGameCell,
+                                                                                       TrendingGameCellModel>
+
+    var dataSource: UICollectionViewDiffableDataSource<HomeSections, AnyHashable>
 
     init(collectionView: UICollectionView) {
 
-        let registration = CellRegistration { cell, indexPath, cellModel in
+        let featuredGameCellRegistration = FeaturedGameCellRegistration { cell, _, cellModel in
             cell.configure(with: cellModel)
         }
 
+        let trendingGameCellRegistration = TrendingGameCellRegistration { cell, indexPath, cellModel in
+            cell.configure(with: cellModel)
+        }
 
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { collectionView, indexPath, cellModel in
-            collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: cellModel)
+            if let cellModel = cellModel as? FeaturedGameCellModel {
+                return collectionView.dequeueConfiguredReusableCell(using: featuredGameCellRegistration,
+                                                                    for: indexPath, item: cellModel)
+            } else if let cellModel = cellModel as? TrendingGameCellModel {
+                return collectionView.dequeueConfiguredReusableCell(using: trendingGameCellRegistration,
+                                                                    for: indexPath, item: cellModel)
+            } else {
+                return nil
+            }
         }
 
     }
 
-    func add(items: [FeaturedGameCellModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<HomeSections, FeaturedGameCellModel>()
-        snapshot.appendSections([.featured])
-        snapshot.appendItems(items)
-        dataSource.apply(snapshot, animatingDifferences: false)
+    func configure(with viewModel: HomeViewModel) {
+        var snapshot = NSDiffableDataSourceSnapshot<HomeSections, AnyHashable>()
+        snapshot.appendSections([.trending, .featured])
+        snapshot.appendItems(viewModel.trendingGameCellModels, toSection: .trending)
+        snapshot.appendItems(viewModel.featuredGameCellModels, toSection: .featured)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }

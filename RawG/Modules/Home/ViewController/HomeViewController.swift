@@ -34,6 +34,6 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeView {
     func configure(with viewModel: HomeViewModel) {
-        dataSource.add(items: viewModel.games)
+        dataSource.configure(with: viewModel)
     }
 }

@@ -8,11 +8,18 @@
 import Foundation
 
 struct HomeViewModel {
-    var games: [FeaturedGameCellModel] = .init()
+    var featuredGameCellModels: [FeaturedGameCellModel] = .init()
+    var trendingGameCellModels: [TrendingGameCellModel] = .init()
 }
 
 extension HomeViewModel {
-    func update(featuredGames: [FeaturedGameCellModel]) -> Self {
-        Self(games: games + featuredGames)
+    func update(with featuredGameCellModels: [FeaturedGameCellModel]) -> Self {
+        Self(featuredGameCellModels: self.featuredGameCellModels + featuredGameCellModels,
+             trendingGameCellModels: trendingGameCellModels)
+    }
+
+    func update(with trendingGameCellModels: [TrendingGameCellModel]) -> Self {
+        Self(featuredGameCellModels: self.featuredGameCellModels,
+             trendingGameCellModels: self.trendingGameCellModels + trendingGameCellModels)
     }
 }
