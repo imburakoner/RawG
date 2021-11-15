@@ -8,7 +8,6 @@
 import Foundation
 
 protocol HomeInteractorOutput: AnyObject {
-
     func didRetrieveNewAndUpdatedGames(_ games: [Game])
     func didRetrieveTrendingGames(_ games: [Game])
     func didRetrieveError(_ error: Error)
@@ -30,6 +29,7 @@ final class HomeInteractor {
 }
 
 extension HomeInteractor: HomeInteractorProtocol {
+
     func fetchTrendingGames() {
         service.fetchTrendingGames { [weak self] result in
             guard let self = self else { return }

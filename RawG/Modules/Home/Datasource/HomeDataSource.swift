@@ -15,6 +15,8 @@ class HomeDataSource {
     private typealias TrendingGameCellRegistration = UICollectionView.CellRegistration<TrendingGameCell,
                                                                                        TrendingGameCellModel>
 
+    private typealias HeaderRegistration = UICollectionView.SupplementaryRegistration<HomeSectionHeaderView>
+
     var dataSource: UICollectionViewDiffableDataSource<HomeSections, AnyHashable>
 
     init(collectionView: UICollectionView) {
@@ -23,11 +25,23 @@ class HomeDataSource {
             cell.configure(with: cellModel)
         }
 
-        let trendingGameCellRegistration = TrendingGameCellRegistration { cell, indexPath, cellModel in
+        let trendingGameCellRegistration = TrendingGameCellRegistration { cell, _, cellModel in
             cell.configure(with: cellModel)
         }
 
-        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { collectionView, indexPath, cellModel in
+        let headerRegistration = HeaderRegistration(elementKind:
+                                                        HomeSectionHeaderView.kind) { headerView, _, indexPath in
+            guard let section = HomeSections(rawValue: indexPath.section) else { return }
+            switch section {
+            case .featured:
+                headerView.configure(title: "New and updated games", subTitle: "Fresh selection every week")
+            case .trending:
+                headerView.configure(title: "Trending games")
+            }
+        }
+
+        dataSource = UICollectionViewDiffableDataSource(collectionView:
+                                                            collectionView) { collectionView, indexPath, cellModel in
             if let cellModel = cellModel as? FeaturedGameCellModel {
                 return collectionView.dequeueConfiguredReusableCell(using: featuredGameCellRegistration,
                                                                     for: indexPath, item: cellModel)
@@ -39,11 +53,16 @@ class HomeDataSource {
             }
         }
 
+        dataSource.supplementaryViewProvider = { _, _, indexPath in
+            collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration,
+                                                                  for: indexPath)
+        }
+
     }
 
     func configure(with viewModel: HomeViewModel) {
         var snapshot = NSDiffableDataSourceSnapshot<HomeSections, AnyHashable>()
-        snapshot.appendSections([.trending, .featured])
+        snapshot.appendSections([.featured, .trending])
         snapshot.appendItems(viewModel.trendingGameCellModels, toSection: .trending)
         snapshot.appendItems(viewModel.featuredGameCellModels, toSection: .featured)
         dataSource.apply(snapshot, animatingDifferences: true)

@@ -53,6 +53,7 @@
 		09A6BFBB27417B2E009CE6B7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBA27417B2E009CE6B7 /* UIImageView+Extensions.swift */; };
 		09A6BFBD2741851E009CE6B7 /* TrendingGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */; };
 		09A6BFBF27418537009CE6B7 /* TrendingGameCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */; };
+		09A6BFC32742D7F5009CE6B7 /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFC22742D7F5009CE6B7 /* HomeSectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		09A6BFBA27417B2E009CE6B7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGameCell.swift; sourceTree = "<group>"; };
 		09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGameCellModel.swift; sourceTree = "<group>"; };
+		09A6BFC22742D7F5009CE6B7 /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 		09A6BF6527412F2B009CE6B7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				09A6BFC12742D7E1009CE6B7 /* HomeSectionHeaderView */,
 				09A6BF7827412FBB009CE6B7 /* TrendingGameCell */,
 				09A6BF7727412FB1009CE6B7 /* FeaturedGameCell */,
 			);
@@ -400,6 +403,14 @@
 				09A6BFBA27417B2E009CE6B7 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		09A6BFC12742D7E1009CE6B7 /* HomeSectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				09A6BFC22742D7F5009CE6B7 /* HomeSectionHeaderView.swift */,
+			);
+			path = HomeSectionHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +567,7 @@
 				09A6BF9F27416C7B009CE6B7 /* Game.swift in Sources */,
 				09A6BFA327416C7B009CE6B7 /* ScreenShot.swift in Sources */,
 				09A6BF9E27416C7B009CE6B7 /* ESBRRating.swift in Sources */,
+				09A6BFC32742D7F5009CE6B7 /* HomeSectionHeaderView.swift in Sources */,
 				09A6BFA027416C7B009CE6B7 /* Rating.swift in Sources */,
 				09A6BFBF27418537009CE6B7 /* TrendingGameCellModel.swift in Sources */,
 				09A6BF7A27412FD3009CE6B7 /* HomeBuilder.swift in Sources */,

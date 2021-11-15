@@ -44,6 +44,16 @@ enum HomeLayoutBuilder {
 
         section.orthogonalScrollingBehavior = .groupPaging
 
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                heightDimension: .estimated(60))
+
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind:
+                                                                            HomeSectionHeaderView.kind,
+                                                                        alignment: .top)
+
+        section.boundarySupplementaryItems = [sectionHeader]
+
         return section
     }
 
@@ -58,9 +68,19 @@ enum HomeLayoutBuilder {
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
+        group.contentInsets = .init(top: 10, leading: 12, bottom: 0, trailing: 12)
+
         let section = NSCollectionLayoutSection(group: group)
 
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 12, bottom: 0, trailing: 12)
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                heightDimension: .estimated(60))
+
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind:
+                                                                            HomeSectionHeaderView.kind,
+                                                                        alignment: .top)
+
+        section.boundarySupplementaryItems = [sectionHeader]
 
         return section
     }
