@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeaturedGameCell: UICollectionViewCell {
+final class FeaturedGameCell: UICollectionViewCell {
 
     let imageView: UIImageView = {
         let imageView = UIImageView()

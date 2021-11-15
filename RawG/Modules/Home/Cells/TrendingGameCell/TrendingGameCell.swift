@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingGameCell: UICollectionViewCell {
+final class TrendingGameCell: UICollectionViewCell {
 
     let imageView: UIImageView = {
         let imageView = UIImageView()

@@ -11,7 +11,7 @@ protocol HomeRouterProtocol {
 
 }
 
-class HomeRouter {
+final class HomeRouter {
 
 }
 

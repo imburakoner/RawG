@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeDataSource: NSObject {
+final class HomeDataSource: NSObject {
 
     private typealias FeaturedGameCellRegistration = UICollectionView.CellRegistration<FeaturedGameCell,
                                                                                        FeaturedGameCellModel>
@@ -71,6 +71,6 @@ class HomeDataSource: NSObject {
 
 extension HomeDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        /// TODO: - Configure Game selection from collection view.
     }
 }
