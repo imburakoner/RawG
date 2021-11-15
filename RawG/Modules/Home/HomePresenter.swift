@@ -29,7 +29,7 @@ final class HomePresenter {
 
 extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
-        interactor.fetchNewAndTrendingGames()
+        interactor.fetchNewAndUpdatedGames()
         interactor.fetchTrendingGames()
     }
 }

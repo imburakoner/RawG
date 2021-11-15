@@ -21,7 +21,9 @@ struct HomeService {
 extension HomeService: HomeServiceProtocol {
 
     func fetchNewAndUpdatedGames(completion: @escaping ServiceResultCompletion<ListGamesRequest.ResponseModel>) {
-        let requestModel = ListGamesRequestModel(pageSize: 10, ordering: "-added")
+        let formattedStartDate = Date.createDate(byAdding: .weekOfYear, value: -1).format(by: .dashed)
+        let endDate = Date.now.format(by: .dashed)
+        let requestModel = ListGamesRequestModel(pageSize: 10, dates: formattedStartDate + "," + endDate)
         let request = ListGamesRequest(requestModel: requestModel)
         service.makeRequest(request: request, completion: completion)
     }

@@ -14,7 +14,7 @@ protocol HomeInteractorOutput: AnyObject {
 }
 
 protocol HomeInteractorProtocol {
-    func fetchNewAndTrendingGames()
+    func fetchNewAndUpdatedGames()
     func fetchTrendingGames()
 }
 
@@ -42,7 +42,7 @@ extension HomeInteractor: HomeInteractorProtocol {
         }
     }
 
-    func fetchNewAndTrendingGames() {
+    func fetchNewAndUpdatedGames() {
         service.fetchNewAndUpdatedGames { [weak self] result in
             guard let self = self else { return }
             switch result {

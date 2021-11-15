@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeDataSource {
+class HomeDataSource: NSObject {
 
     private typealias FeaturedGameCellRegistration = UICollectionView.CellRegistration<FeaturedGameCell,
                                                                                        FeaturedGameCellModel>
@@ -66,5 +66,11 @@ class HomeDataSource {
         snapshot.appendItems(viewModel.trendingGameCellModels, toSection: .trending)
         snapshot.appendItems(viewModel.featuredGameCellModels, toSection: .featured)
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+extension HomeDataSource: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
     }
 }

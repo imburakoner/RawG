@@ -29,8 +29,6 @@
 		09A6BF7627412FAC009CE6B7 /* HomeLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF7527412FAC009CE6B7 /* HomeLayoutBuilder.swift */; };
 		09A6BF7A27412FD3009CE6B7 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF7927412FD3009CE6B7 /* HomeBuilder.swift */; };
 		09A6BF7E27416790009CE6B7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF7D27416790009CE6B7 /* Secrets.swift */; };
-		09A6BF83274169FE009CE6B7 /* SampleSecrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A6BF82274169FE009CE6B7 /* SampleSecrets.plist */; };
-		09A6BF8527416B85009CE6B7 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A6BF8427416B85009CE6B7 /* Secrets.plist */; };
 		09A6BF8927416BF8009CE6B7 /* ListGamesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF8827416BF8009CE6B7 /* ListGamesRequest.swift */; };
 		09A6BF8D27416C45009CE6B7 /* ListGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF8C27416C45009CE6B7 /* ListGamesResponse.swift */; };
 		09A6BF9E27416C7B009CE6B7 /* ESBRRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF9127416C7B009CE6B7 /* ESBRRating.swift */; };
@@ -54,6 +52,8 @@
 		09A6BFBD2741851E009CE6B7 /* TrendingGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */; };
 		09A6BFBF27418537009CE6B7 /* TrendingGameCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */; };
 		09A6BFC32742D7F5009CE6B7 /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFC22742D7F5009CE6B7 /* HomeSectionHeaderView.swift */; };
+		09A6BFC52742F7EE009CE6B7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BFC42742F7EE009CE6B7 /* Date+Extensions.swift */; };
+		09A6BFC92743016B009CE6B7 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A6BFC82743016B009CE6B7 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,8 +81,6 @@
 		09A6BF7527412FAC009CE6B7 /* HomeLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayoutBuilder.swift; sourceTree = "<group>"; };
 		09A6BF7927412FD3009CE6B7 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		09A6BF7D27416790009CE6B7 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		09A6BF82274169FE009CE6B7 /* SampleSecrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SampleSecrets.plist; sourceTree = "<group>"; };
-		09A6BF8427416B85009CE6B7 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		09A6BF8827416BF8009CE6B7 /* ListGamesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesRequest.swift; sourceTree = "<group>"; };
 		09A6BF8C27416C45009CE6B7 /* ListGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesResponse.swift; sourceTree = "<group>"; };
 		09A6BF9127416C7B009CE6B7 /* ESBRRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESBRRating.swift; sourceTree = "<group>"; };
@@ -105,6 +103,8 @@
 		09A6BFBC2741851E009CE6B7 /* TrendingGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGameCell.swift; sourceTree = "<group>"; };
 		09A6BFBE27418537009CE6B7 /* TrendingGameCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGameCellModel.swift; sourceTree = "<group>"; };
 		09A6BFC22742D7F5009CE6B7 /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
+		09A6BFC42742F7EE009CE6B7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		09A6BFC82743016B009CE6B7 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,12 +150,11 @@
 		09A6BF1F27411B5A009CE6B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09A6BF8427416B85009CE6B7 /* Secrets.plist */,
 				09A6BF14274118CC009CE6B7 /* Info.plist */,
 				09A6BF11274118CC009CE6B7 /* LaunchScreen.storyboard */,
 				09A6BF1D27411AFD009CE6B7 /* .swiftlint.yml */,
 				09A6BF0F274118CC009CE6B7 /* Assets.xcassets */,
-				09A6BF82274169FE009CE6B7 /* SampleSecrets.plist */,
+				09A6BFC82743016B009CE6B7 /* Secrets.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -401,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				09A6BFBA27417B2E009CE6B7 /* UIImageView+Extensions.swift */,
+				09A6BFC42742F7EE009CE6B7 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,7 +424,6 @@
 				09A6BF00274118CA009CE6B7 /* Frameworks */,
 				09A6BF01274118CA009CE6B7 /* Resources */,
 				09A6BF1A27411966009CE6B7 /* Swiftlint */,
-				09A6BF7F27416874009CE6B7 /* Secret.Plist Creator */,
 			);
 			buildRules = (
 			);
@@ -480,10 +479,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A6BF1E27411AFD009CE6B7 /* .swiftlint.yml in Resources */,
-				09A6BF83274169FE009CE6B7 /* SampleSecrets.plist in Resources */,
+				09A6BFC92743016B009CE6B7 /* Secrets.plist in Resources */,
 				09A6BF13274118CC009CE6B7 /* LaunchScreen.storyboard in Resources */,
 				09A6BF10274118CC009CE6B7 /* Assets.xcassets in Resources */,
-				09A6BF8527416B85009CE6B7 /* Secrets.plist in Resources */,
 				09A6BF2727411BD7009CE6B7 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,24 +506,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		09A6BF7F27416874009CE6B7 /* Secret.Plist Creator */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Secret.Plist Creator";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "CONFIG_FILE_BASE_NAME=\"Secrets\"\n\nCONFIG_FILE_NAME=${CONFIG_FILE_BASE_NAME}.plist\nSAMPLE_CONFIG_FILE_NAME=Sample${CONFIG_FILE_BASE_NAME}.plist\n\nCONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/Resources/$CONFIG_FILE_NAME\nSAMPLE_CONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/Resources/$SAMPLE_CONFIG_FILE_NAME\n\nif [ -f \"$CONFIG_FILE_PATH\" ]; then\n  echo \"$CONFIG_FILE_PATH exists.\"\nelse\n  echo \"$CONFIG_FILE_PATH does not exist, copying sample\"\n  cp -v \"${SAMPLE_CONFIG_FILE_PATH}\" \"${CONFIG_FILE_PATH}\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -561,6 +541,7 @@
 				09A6BFBD2741851E009CE6B7 /* TrendingGameCell.swift in Sources */,
 				09A6BF7227412F99009CE6B7 /* HomeRouter.swift in Sources */,
 				09A6BF09274118CA009CE6B7 /* SceneDelegate.swift in Sources */,
+				09A6BFC52742F7EE009CE6B7 /* Date+Extensions.swift in Sources */,
 				09A6BFA427416C7B009CE6B7 /* ParentPlatform.swift in Sources */,
 				09A6BF3227412168009CE6B7 /* Requestable.swift in Sources */,
 				09A6BF3027412154009CE6B7 /* Codable+Extensions.swift in Sources */,
