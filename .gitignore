@@ -1,2 +1,8 @@
 ## User settings
 xcuserdata/
+
+/RawG/RawG/Resources/Secrets.plist
+
+*.resolved
+*.xcworkspacedata
+*.xcscheme

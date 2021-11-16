@@ -7,10 +7,33 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol HomeView: AnyObject {
+    func configure(with viewModel: HomeViewModel)
+}
+
+final class HomeViewController: UIViewController {
+
+    var presenter: HomePresenterProtocol!
+
+    private var dataSource: HomeDataSource!
+
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            dataSource = HomeDataSource(collectionView: collectionView)
+            collectionView.dataSource = dataSource.dataSource
+            collectionView.collectionViewLayout = HomeLayoutBuilder.build()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
     }
 
+}
+
+extension HomeViewController: HomeView {
+    func configure(with viewModel: HomeViewModel) {
+        dataSource.configure(with: viewModel)
+    }
 }
