@@ -1,5 +1,5 @@
 //
-//  Requestable.swift
+//  URLRequestConvertable.swift
 //  RawG
 //
 //  Created by Burak Oner on 14.11.2021.
@@ -7,12 +7,10 @@
 
 import Foundation
 
-protocol Requestable {
+protocol URLRequestConvertable {
 
     associatedtype RequestModel: Encodable
     associatedtype ResponseModel: Decodable
-
-    var request: URLRequest { get }
 
     var requestModel: RequestModel { get }
 
@@ -23,19 +21,17 @@ protocol Requestable {
     var timeOutInterval: TimeInterval { get }
 
     init(requestModel: RequestModel)
+
+    func convert() -> URLRequest
 }
 
-extension Requestable {
-
-    var request: URLRequest {
-        prepareRequest()
-    }
+extension URLRequestConvertable {
 
     var timeOutInterval: TimeInterval {
         return 60.0
     }
 
-    private func prepareRequest() -> URLRequest {
+    func convert() -> URLRequest {
         switch httpMethod {
         case .get:
             let queryItems = requestModel.asDictionary.compactMap { URLQueryItem(name: $0.key,
@@ -44,13 +40,6 @@ extension Requestable {
             var request = URLRequest(url: endpoint.url!)
             request.httpMethod = httpMethod.rawValue
             request.timeoutInterval = timeOutInterval
-            return request
-        case .post:
-            let endpoint = Endpoint(path: path)
-            var request = URLRequest(url: endpoint.url!)
-            request.httpMethod = httpMethod.rawValue
-            request.timeoutInterval = timeOutInterval
-            request.httpBody = requestModel.asData
             return request
         default:
             return  URLRequest(url: URL(string: "")!)

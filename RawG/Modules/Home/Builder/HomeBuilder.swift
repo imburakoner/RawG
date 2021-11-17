@@ -9,7 +9,7 @@ import Foundation
 
 enum HomeBuilder {
     static func build() -> HomeViewController {
-        let service = HomeService(service: Service(session: .shared))
+        let service = HomeService(service: Service(session: URLSession.shared))
         let interactor = HomeInteractor(service: service)
         let router = HomeRouter()
         let viewModel = HomeViewModel()
