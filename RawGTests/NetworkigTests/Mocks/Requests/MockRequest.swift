@@ -8,7 +8,7 @@
 import Foundation
 @testable import RawG
 
-struct MockRequest: URLRequestConvertable {
+struct MockRequest: URLRequestConvertible {
 
     typealias RequestModel = MockRequestModel
     typealias ResponseModel = MockResponseModel

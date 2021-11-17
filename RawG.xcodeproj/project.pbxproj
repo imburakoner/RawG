@@ -25,7 +25,7 @@
 		09A6BF2727411BD7009CE6B7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A6BF2527411BD7009CE6B7 /* HomeViewController.xib */; };
 		09A6BF2B27412114009CE6B7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF2A27412114009CE6B7 /* Service.swift */; };
 		09A6BF3027412154009CE6B7 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF2F27412154009CE6B7 /* Codable+Extensions.swift */; };
-		09A6BF3227412168009CE6B7 /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF3127412168009CE6B7 /* URLRequestConvertable.swift */; };
+		09A6BF3227412168009CE6B7 /* URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF3127412168009CE6B7 /* URLRequestConvertible.swift */; };
 		09A6BF342741217B009CE6B7 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF332741217B009CE6B7 /* RequestType.swift */; };
 		09A6BF362741218F009CE6B7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF352741218F009CE6B7 /* Endpoint.swift */; };
 		09A6BF38274121A9009CE6B7 /* EndpointPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6BF37274121A9009CE6B7 /* EndpointPath.swift */; };
@@ -100,7 +100,7 @@
 		09A6BF2527411BD7009CE6B7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		09A6BF2A27412114009CE6B7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		09A6BF2F27412154009CE6B7 /* Codable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extensions.swift"; sourceTree = "<group>"; };
-		09A6BF3127412168009CE6B7 /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
+		09A6BF3127412168009CE6B7 /* URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertible.swift; sourceTree = "<group>"; };
 		09A6BF332741217B009CE6B7 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		09A6BF352741218F009CE6B7 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		09A6BF37274121A9009CE6B7 /* EndpointPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointPath.swift; sourceTree = "<group>"; };
@@ -177,9 +177,25 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		0923E30727458C480014AEA9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0923E30827458C500014AEA9 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0923E30827458C500014AEA9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		0965B2272744264300297E50 /* RawGTests */ = {
 			isa = PBXGroup;
 			children = (
+				0923E30727458C480014AEA9 /* Modules */,
 				0965B22F2744264D00297E50 /* NetworkigTests */,
 			);
 			path = RawGTests;
@@ -334,7 +350,7 @@
 			children = (
 				090E447E2745837600D4E65C /* URLSessionProtocol.swift */,
 				090E4480274583B200D4E65C /* DataTaskProtocol.swift */,
-				09A6BF3127412168009CE6B7 /* URLRequestConvertable.swift */,
+				09A6BF3127412168009CE6B7 /* URLRequestConvertible.swift */,
 				09A6BF332741217B009CE6B7 /* RequestType.swift */,
 				09A6BF352741218F009CE6B7 /* Endpoint.swift */,
 				09A6BF37274121A9009CE6B7 /* EndpointPath.swift */,
@@ -736,7 +752,7 @@
 				09A6BF09274118CA009CE6B7 /* SceneDelegate.swift in Sources */,
 				09A6BFC52742F7EE009CE6B7 /* Date+Extensions.swift in Sources */,
 				09A6BFA427416C7B009CE6B7 /* ParentPlatform.swift in Sources */,
-				09A6BF3227412168009CE6B7 /* URLRequestConvertable.swift in Sources */,
+				09A6BF3227412168009CE6B7 /* URLRequestConvertible.swift in Sources */,
 				09A6BF3027412154009CE6B7 /* Codable+Extensions.swift in Sources */,
 				09A6BF9F27416C7B009CE6B7 /* Game.swift in Sources */,
 				09A6BFA327416C7B009CE6B7 /* ScreenShot.swift in Sources */,

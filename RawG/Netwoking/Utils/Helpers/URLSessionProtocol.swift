@@ -10,12 +10,12 @@ import Foundation
 typealias URLSessionCompletion = (Data?, URLResponse?, Error?) -> Void
 
 protocol URLSessionProtocol {
-    func dataTask<Request: URLRequestConvertable>(with convertable: Request,
+    func dataTask<Request: URLRequestConvertible>(with convertable: Request,
                                                   completion: @escaping URLSessionCompletion) -> DataTaskProtocol
 }
 
 extension URLSession: URLSessionProtocol {
-    func dataTask<Request: URLRequestConvertable>(with requestConvertable: Request,
+    func dataTask<Request: URLRequestConvertible>(with requestConvertable: Request,
                                                   completion: @escaping URLSessionCompletion) -> DataTaskProtocol {
         dataTask(with: requestConvertable.convert(), completionHandler: completion)
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ListGamesRequest: URLRequestConvertable {
+struct ListGamesRequest: URLRequestConvertible {
 
     typealias RequestModel = ListGamesRequestModel
 

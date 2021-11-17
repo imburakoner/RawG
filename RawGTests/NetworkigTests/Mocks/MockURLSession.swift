@@ -24,7 +24,7 @@ class MockURLSession: URLSessionProtocol {
         self.error = error
     }
 
-    func dataTask<Request: URLRequestConvertable>(with convertable: Request,
+    func dataTask<Request: URLRequestConvertible>(with convertable: Request,
                                                   completion: @escaping URLSessionCompletion) -> DataTaskProtocol {
         self.isDataTaskCalled = true
         self.isDataTaskCompletedWithError = error != nil

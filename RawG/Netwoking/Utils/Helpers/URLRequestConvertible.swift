@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol URLRequestConvertable {
+protocol URLRequestConvertible {
 
     associatedtype RequestModel: Encodable
     associatedtype ResponseModel: Decodable
@@ -25,7 +25,7 @@ protocol URLRequestConvertable {
     func convert() -> URLRequest
 }
 
-extension URLRequestConvertable {
+extension URLRequestConvertible {
 
     var timeOutInterval: TimeInterval {
         return 60.0
