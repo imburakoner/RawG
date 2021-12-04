@@ -60,7 +60,7 @@ final class HomeDataSource: NSObject {
 
     }
 
-    func configure(with viewModel: HomeViewModel) {
+    func configure(with viewModel: HomeViewModelProtocol) {
         var snapshot = NSDiffableDataSourceSnapshot<HomeSections, AnyHashable>()
         snapshot.appendSections([.featured, .trending])
         snapshot.appendItems(viewModel.trendingGameCellModels, toSection: .trending)

@@ -13,7 +13,7 @@ struct ListGamesRequest: URLRequestConvertible {
 
     typealias ResponseModel = ListGamesResponse
 
-    var httpMethod: RequestType = .get
+    var httpMethod: HTTPMethod = .get
 
     var path: EndpointPath = .games
 

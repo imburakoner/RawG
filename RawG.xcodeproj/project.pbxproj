@@ -11,6 +11,13 @@
 		090E447F2745837600D4E65C /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E447E2745837600D4E65C /* URLSessionProtocol.swift */; };
 		090E4481274583B200D4E65C /* DataTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E4480274583B200D4E65C /* DataTaskProtocol.swift */; };
 		0923E30627458B570014AEA9 /* ListGamesRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923E30527458B570014AEA9 /* ListGamesRequestTests.swift */; };
+		0923E30B274590090014AEA9 /* FakeHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923E30A274590090014AEA9 /* FakeHomeService.swift */; };
+		0923E30D274590D10014AEA9 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923E30C274590D10014AEA9 /* HomeInteractorTests.swift */; };
+		0923E359274778990014AEA9 /* FakeHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923E358274778990014AEA9 /* FakeHomeInteractor.swift */; };
+		0923E35B274779450014AEA9 /* FakeHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923E35A274779450014AEA9 /* FakeHomeViewModel.swift */; };
+		0923E35D2747794E0014AEA9 /* FakeHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923E35C2747794E0014AEA9 /* FakeHomeRouter.swift */; };
+		0958C068275AA8A40002FBC5 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958C067275AA8A40002FBC5 /* HomePresenterTests.swift */; };
+		0958C06A275BA2EA0002FBC5 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958C069275BA2EA0002FBC5 /* HomeRouterTests.swift */; };
 		0965B23E27443DE700297E50 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0965B23D27443DE700297E50 /* ServiceTests.swift */; };
 		0965B2442744498400297E50 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0965B2432744498400297E50 /* MockURLSession.swift */; };
 		09665D05274457F300DE767F /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09665D04274457F300DE767F /* MockRequest.swift */; };
@@ -83,6 +90,13 @@
 		090E447E2745837600D4E65C /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		090E4480274583B200D4E65C /* DataTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskProtocol.swift; sourceTree = "<group>"; };
 		0923E30527458B570014AEA9 /* ListGamesRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesRequestTests.swift; sourceTree = "<group>"; };
+		0923E30A274590090014AEA9 /* FakeHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHomeService.swift; sourceTree = "<group>"; };
+		0923E30C274590D10014AEA9 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		0923E358274778990014AEA9 /* FakeHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHomeInteractor.swift; sourceTree = "<group>"; };
+		0923E35A274779450014AEA9 /* FakeHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHomeViewModel.swift; sourceTree = "<group>"; };
+		0923E35C2747794E0014AEA9 /* FakeHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHomeRouter.swift; sourceTree = "<group>"; };
+		0958C067275AA8A40002FBC5 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		0958C069275BA2EA0002FBC5 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
 		0965B2262744264300297E50 /* RawGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RawGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0965B23D27443DE700297E50 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		0965B2432744498400297E50 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
@@ -188,8 +202,23 @@
 		0923E30827458C500014AEA9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0923E30927458FEC0014AEA9 /* FakeClasses */,
+				0923E30C274590D10014AEA9 /* HomeInteractorTests.swift */,
+				0958C067275AA8A40002FBC5 /* HomePresenterTests.swift */,
+				0958C069275BA2EA0002FBC5 /* HomeRouterTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0923E30927458FEC0014AEA9 /* FakeClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0923E30A274590090014AEA9 /* FakeHomeService.swift */,
+				0923E358274778990014AEA9 /* FakeHomeInteractor.swift */,
+				0923E35A274779450014AEA9 /* FakeHomeViewModel.swift */,
+				0923E35C2747794E0014AEA9 /* FakeHomeRouter.swift */,
+			);
+			path = FakeClasses;
 			sourceTree = "<group>";
 		};
 		0965B2272744264300297E50 /* RawGTests */ = {
@@ -704,12 +733,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0958C068275AA8A40002FBC5 /* HomePresenterTests.swift in Sources */,
+				0923E35D2747794E0014AEA9 /* FakeHomeRouter.swift in Sources */,
+				0923E35B274779450014AEA9 /* FakeHomeViewModel.swift in Sources */,
+				0958C06A275BA2EA0002FBC5 /* HomeRouterTests.swift in Sources */,
 				09665D072744582700DE767F /* MockRequestModel.swift in Sources */,
+				0923E30B274590090014AEA9 /* FakeHomeService.swift in Sources */,
 				09B02F652745892300E280ED /* MockDataTask.swift in Sources */,
+				0923E30D274590D10014AEA9 /* HomeInteractorTests.swift in Sources */,
 				0965B2442744498400297E50 /* MockURLSession.swift in Sources */,
 				0923E30627458B570014AEA9 /* ListGamesRequestTests.swift in Sources */,
 				0965B23E27443DE700297E50 /* ServiceTests.swift in Sources */,
 				09665D092744583600DE767F /* MockResponseModel.swift in Sources */,
+				0923E359274778990014AEA9 /* FakeHomeInteractor.swift in Sources */,
 				09665D05274457F300DE767F /* MockRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

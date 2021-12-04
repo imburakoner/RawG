@@ -8,8 +8,8 @@
 import Foundation
 
 protocol HomeServiceProtocol {
-    func fetchNewAndUpdatedGames(completion: @escaping ServiceResultCompletion<ListGamesRequest.ResponseModel>)
-    func fetchTrendingGames(completion: @escaping ServiceResultCompletion<ListGamesRequest.ResponseModel>)
+    func fetchNewAndUpdatedGames(completion: @escaping ServiceCompletion<ListGamesRequest.ResponseModel>)
+    func fetchTrendingGames(completion: @escaping ServiceCompletion<ListGamesRequest.ResponseModel>)
 }
 
 struct HomeService {
@@ -20,7 +20,7 @@ struct HomeService {
 
 extension HomeService: HomeServiceProtocol {
 
-    func fetchNewAndUpdatedGames(completion: @escaping ServiceResultCompletion<ListGamesRequest.ResponseModel>) {
+    func fetchNewAndUpdatedGames(completion: @escaping ServiceCompletion<ListGamesRequest.ResponseModel>) {
         let formattedStartDate = Date.createDate(byAdding: .weekOfYear, value: -1).format(by: .dashed)
         let endDate = Date.now.format(by: .dashed)
         let requestModel = ListGamesRequestModel(pageSize: 10, dates: formattedStartDate + "," + endDate)
@@ -28,7 +28,7 @@ extension HomeService: HomeServiceProtocol {
         service.makeRequest(request: request, completion: completion)
     }
 
-    func fetchTrendingGames(completion: @escaping ServiceResultCompletion<ListGamesRequest.ResponseModel>) {
+    func fetchTrendingGames(completion: @escaping ServiceCompletion<ListGamesRequest.ResponseModel>) {
         let requestModel = ListGamesRequestModel(pageSize: 20, ordering: "-relevance")
         let request = ListGamesRequest(requestModel: requestModel)
         service.makeRequest(request: request, completion: completion)

@@ -21,6 +21,7 @@ class ServiceTests: XCTestCase {
         let service = Service(session: session)
 
         service.makeRequest(request: mockRequest) { _ in
+            XCTAssertNotNil(session.data)
             XCTAssertTrue(session.isDataTaskCalled)
             XCTAssertTrue(session.isDataTaskCompletedWithError)
         }

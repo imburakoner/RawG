@@ -14,7 +14,7 @@ protocol URLRequestConvertible {
 
     var requestModel: RequestModel { get }
 
-    var httpMethod: RequestType { get }
+    var httpMethod: HTTPMethod { get }
 
     var path: EndpointPath { get set }
 

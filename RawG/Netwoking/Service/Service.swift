@@ -12,7 +12,7 @@ struct Service {
     let session: URLSessionProtocol
 
     func makeRequest<Request: URLRequestConvertible>(request: Request,
-                                                     completion: @escaping ServiceResultCompletion<Request.ResponseModel>) {
+                                                     completion: @escaping ServiceCompletion<Request.ResponseModel>) {
 
         session.dataTask(with: request) { data, response, error in
             let serviceResult: ServiceResult<Request.ResponseModel>

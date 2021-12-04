@@ -15,7 +15,7 @@ struct MockRequest: URLRequestConvertible {
 
     var requestModel: MockRequestModel
 
-    var httpMethod: RequestType = .get
+    var httpMethod: HTTPMethod = .get
 
     var path: EndpointPath = .games
 
