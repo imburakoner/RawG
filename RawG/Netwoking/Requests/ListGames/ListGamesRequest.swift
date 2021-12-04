@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct ListGamesRequest: Requestable {
+struct ListGamesRequest: URLRequestConvertible {
 
     typealias RequestModel = ListGamesRequestModel
 
     typealias ResponseModel = ListGamesResponse
 
-    var httpMethod: RequestType = .get
+    var httpMethod: HTTPMethod = .get
 
     var path: EndpointPath = .games
 

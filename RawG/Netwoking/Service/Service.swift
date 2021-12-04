@@ -9,14 +9,15 @@ import Foundation
 
 struct Service {
 
-    let session: URLSession
+    let session: URLSessionProtocol
 
-    func makeRequest<Request: Requestable>(request: Request,
-                                           completion: @escaping ServiceResultCompletion<Request.ResponseModel>) {
-        session.dataTask(with: request.request) { (data, response, error) in
+    func makeRequest<Request: URLRequestConvertible>(request: Request,
+                                                     completion: @escaping ServiceCompletion<Request.ResponseModel>) {
+
+        session.dataTask(with: request) { data, response, error in
             let serviceResult: ServiceResult<Request.ResponseModel>
             if let error = error {
-                serviceResult = .failure(error)
+                serviceResult = .failure(ServiceError(withError: error))
             } else if let data = data {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -24,10 +25,10 @@ struct Service {
                     let response = try decoder.decode(Request.ResponseModel.self, from: data)
                     serviceResult = .success(response)
                 } catch {
-                    serviceResult = .failure(error)
+                    serviceResult = .failure(.unknown)
                 }
             } else {
-                serviceResult = .failure(NSError(domain: "com.imbsoft.network", code: 999, userInfo: nil))
+                serviceResult = .failure(.unknown)
             }
             DispatchQueue.main.async {
                 completion(serviceResult)

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeView: AnyObject {
-    func configure(with viewModel: HomeViewModel)
+    func configure(with viewModel: HomeViewModelProtocol)
 }
 
 final class HomeViewController: UIViewController {
@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
-    func configure(with viewModel: HomeViewModel) {
+    func configure(with viewModel: HomeViewModelProtocol) {
         dataSource.configure(with: viewModel)
     }
 }

@@ -7,5 +7,5 @@
 
 import Foundation
 
-typealias ServiceResult<T: Decodable> = Result<T, Error>
-typealias ServiceResultCompletion<T: Decodable> = (ServiceResult<T>) -> Void
+typealias ServiceResult<T: Decodable> = Result<T, ServiceError>
+typealias ServiceCompletion<T: Decodable> = (ServiceResult<T>) -> Void
